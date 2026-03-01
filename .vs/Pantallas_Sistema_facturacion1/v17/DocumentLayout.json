@@ -1,0 +1,390 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|c:\\users\\dell\\source\\repos\\pantallas_sistema_facturacion1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frminformes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frminformes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmacerca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmacerca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmacerca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmacerca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\datossistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:datossistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlistafacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlistafacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmayuda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmayuda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlistausuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlistausuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlistaempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlistaempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlistaclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlistaclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlistacategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlistacategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmmenunuevo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmmenunuevo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmmenunuevo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmmenunuevo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F49D5707-755B-4EB4-9CA8-9431BC5C3A8F}|Pantallas_Sistema_facturacion1.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmAcerca.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAcerca.cs",
+              "RelativeDocumentMoniker": "frmAcerca.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAcerca.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmAcerca.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T22:03:52.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmAcerca.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAcerca.cs",
+              "RelativeDocumentMoniker": "frmAcerca.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAcerca.cs",
+              "RelativeToolTip": "frmAcerca.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwBoAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:04:51.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmListaFacturas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaFacturas.cs",
+              "RelativeDocumentMoniker": "frmListaFacturas.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaFacturas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmListaFacturas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:19:39.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmInformes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmInformes.cs",
+              "RelativeDocumentMoniker": "frmInformes.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmInformes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmInformes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:09:50.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T22:27:41.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DatosSistema.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\DatosSistema.cs",
+              "RelativeDocumentMoniker": "DatosSistema.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\DatosSistema.cs",
+              "RelativeToolTip": "DatosSistema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:09:35.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmProductos.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmProductos.cs",
+              "RelativeDocumentMoniker": "frmProductos.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmProductos.cs",
+              "RelativeToolTip": "frmProductos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:17:10.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmFacturas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmFacturas.cs",
+              "RelativeDocumentMoniker": "frmFacturas.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmFacturas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmFacturas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:19:36.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmFacturas.cs",
+              "RelativeDocumentMoniker": "frmFacturas.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmFacturas.cs",
+              "RelativeToolTip": "frmFacturas.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAqwBYAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:11:02.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmCategoriaProductos.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmCategoriaProductos.cs",
+              "RelativeDocumentMoniker": "frmCategoriaProductos.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmCategoriaProductos.cs",
+              "RelativeToolTip": "frmCategoriaProductos.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAwE8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:11:56.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\Producto.cs",
+              "RelativeDocumentMoniker": "Producto.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\Producto.cs",
+              "RelativeToolTip": "Producto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:20:31.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmProductos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmProductos.cs",
+              "RelativeDocumentMoniker": "frmProductos.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmProductos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmProductos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:17:06.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmClientes.cs",
+              "RelativeDocumentMoniker": "frmClientes.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:16:34.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmUsuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmUsuarios.cs",
+              "RelativeDocumentMoniker": "frmUsuarios.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmUsuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmUsuarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:09:38.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmListaUsuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaUsuarios.cs",
+              "RelativeDocumentMoniker": "frmListaUsuarios.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaUsuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmListaUsuarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:09:13.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmCategoriaProductos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmCategoriaProductos.cs",
+              "RelativeDocumentMoniker": "frmCategoriaProductos.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmCategoriaProductos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmCategoriaProductos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:14:44.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmAyuda.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAyuda.cs",
+              "RelativeDocumentMoniker": "frmAyuda.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmAyuda.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmAyuda.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:25:57.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmLogin.cs",
+              "RelativeDocumentMoniker": "frmLogin.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:21:53.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmListaClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaClientes.cs",
+              "RelativeDocumentMoniker": "frmListaClientes.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmListaClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:16:38.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "frmListaEmpleados.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaEmpleados.cs",
+              "RelativeDocumentMoniker": "frmListaEmpleados.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaEmpleados.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmListaEmpleados.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:14:06.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmListaCategorias.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaCategorias.cs",
+              "RelativeDocumentMoniker": "frmListaCategorias.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmListaCategorias.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmListaCategorias.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T23:12:29.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "frmMenuNuevo.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmMenuNuevo.cs",
+              "RelativeDocumentMoniker": "frmMenuNuevo.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmMenuNuevo.cs",
+              "RelativeToolTip": "frmMenuNuevo.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAWwGYAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T22:16:19.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmMenuNuevo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmMenuNuevo.cs",
+              "RelativeDocumentMoniker": "frmMenuNuevo.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmMenuNuevo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmMenuNuevo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T22:13:59.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmLogin.cs",
+              "RelativeDocumentMoniker": "frmLogin.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Pantallas_Sistema_facturacion1\\frmLogin.cs",
+              "RelativeToolTip": "frmLogin.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAwCkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T22:28:59.023Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
