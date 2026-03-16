@@ -15,13 +15,18 @@ namespace Pantallas_Sistema_facturacion1
         public frmListaCategorias()
         {
             InitializeComponent();
-
         }
 
         private void frmListaCategorias_Load(object sender, EventArgs e)
         {
-            dgvCategorias.AutoGenerateColumns = true;
-            dgvCategorias.DataSource = DatosSistema.Categorias;
+            CargarCategorias();
+        }
+        void CargarCategorias()
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            dgvCategorias.DataSource = datos.EjecutarConsulta(
+                "SELECT IdCategoria, StrDescripcion FROM TBLCATEGORIA_PROD");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -30,23 +35,35 @@ namespace Pantallas_Sistema_facturacion1
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                DatosSistema.Categorias.Add(frm.categoriaCreada);
-
-                dgvCategorias.DataSource = null;
-                dgvCategorias.DataSource = DatosSistema.Categorias;
+                CargarCategorias();   // refrescar el grid
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Categoria seleccionado = GridHelper.ObtenerFilaActual<Categoria>(dgvCategorias);
-            if (seleccionado == null) return;
+            if (dgvCategorias.CurrentRow == null) return;
 
-            DatosSistema.Categorias.Remove(seleccionado);
+            int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["IdCategoria"].Value);
 
-            dgvCategorias.DataSource = null;
-            dgvCategorias.DataSource = DatosSistema.Categorias;
-        } 
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.EjecutarComando("DELETE FROM TBLCATEGORIA_PROD WHERE IdCategoria=" + id);
+                MessageBox.Show("Categoría eliminada correctamente");
+
+                CargarCategorias();
+            }
+            catch
+            {
+                MessageBox.Show(
+                "No se puede eliminar esta categoría porque tiene productos asociados.",
+                "Categoria en uso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //SI hace clic en  el encabezado o espacio vacío, no hacer nada
@@ -55,18 +72,22 @@ namespace Pantallas_Sistema_facturacion1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvCategorias.CurrentRow == null) return;
+
+            int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["IdCategoria"].Value);
+            string descripcion = dgvCategorias.CurrentRow.Cells["StrDescripcion"].Value.ToString();
+
+            frmCategoriaProductos frm = new frmCategoriaProductos();
+
+            frm.categoriaEditar = new Categoria()
             {
-                Categoria seleccionado = GridHelper.ObtenerFilaActual<Categoria>(dgvCategorias);
-                if (seleccionado == null) return;
+                IdCategoria = id,
+                Descripcion = descripcion
+            };
 
-                frmCategoriaProductos frm = new frmCategoriaProductos();
-                frm.categoriaEditar = seleccionado;
-
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    dgvCategorias.DataSource = null;
-                    dgvCategorias.DataSource = DatosSistema.Categorias;
-                }
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                CargarCategorias();
             }
         }
     }

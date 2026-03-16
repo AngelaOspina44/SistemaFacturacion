@@ -2,9 +2,10 @@
 {
     public class Usuario
     {
-        public string Nombre { get; set; }
-        public string Login { get; set; }
-        public string Clave { get; set; }
-        public string Rol { get; set; }
+        public int IdUsuario { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Password { get; set; }
+
+        public int IdEmpleado { get; set; }
     }
 }

@@ -120,11 +120,6 @@ namespace Pantallas_Sistema_facturacion1
             AbrirFormulario(new frmListaFacturas());
         }
 
-        private void btnSeguridad_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormulario(new frmListaUsuarios());
-        }
-
         private void btnInformes_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(new frmInformes());
@@ -138,6 +133,45 @@ namespace Pantallas_Sistema_facturacion1
         private void btnAcerca_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(new frmAcerca());
+        }
+
+        private void frmMenuNuevo_Load(object sender, EventArgs e)
+        {
+
+            lblUsuario.Text = "Usuario: " + Sesion.Usuario;
+            lblRol.Text = "Rol: " + Sesion.Rol;
+
+            //GERENTE Y SECRETARIA CON ACCESO A TODO
+            if (Sesion.Rol == "Gerente" || Sesion.Rol == "Secretaria")
+            {
+                return;
+            }
+            else if (Sesion.Rol == "Operario")
+            {
+                btnClientes.Enabled = false;
+                btnEmpleados.Enabled = false;
+                btnSeguridad.Enabled = false;
+                btnInformes.Enabled = false;
+            }
+            else if (Sesion.Rol == "Administrativo")
+            {
+                btnProductos.Enabled = false;
+                btnCategorias.Enabled = false;
+                btnSeguridad.Enabled = false;
+            }
+
+        }
+        
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Close();
         }
     }
 }

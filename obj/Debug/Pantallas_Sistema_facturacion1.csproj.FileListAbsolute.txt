@@ -24,3 +24,5 @@ C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Si
 C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Sistema_facturacion1.csproj.CoreCompileInputs.cache
 C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Sistema_facturacion1.exe
 C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Sistema_facturacion1.pdb
+C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Sistema_facturacion1.frmListaRoles.resources
+C:\Users\DELL\source\repos\Pantallas_Sistema_facturacion1\obj\Debug\Pantallas_Sistema_facturacion1.frmRoles.resources

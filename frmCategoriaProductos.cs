@@ -19,41 +19,33 @@ namespace Pantallas_Sistema_facturacion1
             InitializeComponent();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-                MessageBox.Show("El nombre es obligatorio");
-                return;
-            }
+{
+    AccesoDatos datos = new AccesoDatos();
 
-            if (categoriaEditar != null)
-            {
-                // EDITAR
-                categoriaEditar.Nombre = txtNombre.Text;
-                categoriaEditar.Descripcion = txtDescripcion.Text;
-            }
-            else
-            {
-                // NUEVO
-                categoriaCreada = new Categoria()
-                {
-                    Nombre = txtNombre.Text,
-                    Descripcion = txtDescripcion.Text
-                };
-            }
+    if (categoriaEditar == null)
+    {
+        string sql = "INSERT INTO TBLCATEGORIA_PROD(StrDescripcion, DtmFechaModifica, StrUsuarioModifico) VALUES('"
+                     + txtDescripcion.Text +
+                     "', GETDATE(), 'Sistema')";
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
+        datos.EjecutarComando(sql);
+    }
+    else
+    {
+        string sql = "UPDATE TBLCATEGORIA_PROD SET StrDescripcion='"
+                     + txtDescripcion.Text +
+                     "' WHERE IdCategoria=" + categoriaEditar.IdCategoria;
+
+        datos.EjecutarComando(sql);
+    }
+
+    this.DialogResult = DialogResult.OK;
+    this.Close();
+}
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
@@ -70,7 +62,6 @@ namespace Pantallas_Sistema_facturacion1
         {
             if (categoriaEditar != null)
             {
-                txtNombre.Text = categoriaEditar.Nombre;
                 txtDescripcion.Text = categoriaEditar.Descripcion;
             }
         }

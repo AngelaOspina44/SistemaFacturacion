@@ -14,6 +14,9 @@ namespace Pantallas_Sistema_facturacion1
 {
     public partial class frmClientes : Form
     {
+        AccesoDatos datos = new AccesoDatos();
+
+        int idClienteSeleccionado = 0;
         public Cliente clienteEditar { get; set; }
         public Cliente clienteCreado { get; set; }
         public frmClientes()
@@ -37,33 +40,37 @@ namespace Pantallas_Sistema_facturacion1
                 txtEmail.Text = clienteEditar.Email;
             }
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (clienteEditar != null)
+            private void btnGuardar_Click(object sender, EventArgs e)
             {
-                // EDITAR
-                clienteEditar.Nombre = txtNombre.Text;
-                clienteEditar.Documento = txtDocumento.Text;
-                clienteEditar.Direccion = txtDireccion.Text;
-                clienteEditar.Telefono = txtTelefono.Text;
-                clienteEditar.Email = txtEmail.Text;
-            }
-            else
-            {
-                // NUEVO
-                clienteCreado = new Cliente()
+                if (clienteEditar == null)
                 {
-                    Nombre = txtNombre.Text,
-                    Documento = txtDocumento.Text,
-                    Direccion = txtDireccion.Text,
-                    Telefono = txtTelefono.Text,
-                    Email = txtEmail.Text
-                };
-            }
+                    // INSERT (NUEVO)
+                    string sql = "INSERT INTO Clientes(Nombre,Documento,Telefono,Direccion,Email) VALUES('"
+                    + txtNombre.Text + "','"
+                    + txtDocumento.Text + "','"
+                    + txtTelefono.Text + "','"
+                    + txtDireccion.Text + "','"
+                    + txtEmail.Text + "')";
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                    datos.EjecutarComando(sql);
+                    MessageBox.Show("Cliente guardado correctamente");
+                }
+                else
+                {
+                    // UPDATE (EDITAR)
+                    string sql = "UPDATE Clientes SET Nombre='" + txtNombre.Text +
+                                  "',Documento='" + txtDocumento.Text +
+                                  "',Telefono='" + txtTelefono.Text +
+                                  "',Direccion='" + txtDireccion.Text +
+                                  "',Email='" + txtEmail.Text +
+                                  "' WHERE IdCliente=" + clienteEditar.IdCliente;
+
+                    datos.EjecutarComando(sql);
+                    MessageBox.Show("Cliente actualizado correctamente");
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
-}   

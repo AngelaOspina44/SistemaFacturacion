@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DatosSistema.cs" />
@@ -169,6 +170,12 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +186,7 @@
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesion.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="frmAcerca.resx">
       <DependentUpon>frmAcerca.cs</DependentUpon>
@@ -216,6 +224,9 @@
     <EmbeddedResource Include="frmListaProductos.resx">
       <DependentUpon>frmListaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListaRoles.resx">
+      <DependentUpon>frmListaRoles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaUsuarios.resx">
       <DependentUpon>frmListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

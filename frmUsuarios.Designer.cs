@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.cbRol = new System.Windows.Forms.ComboBox();
@@ -38,15 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbEmpleado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(354, 51);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(219, 31);
-            this.txtNombre.TabIndex = 0;
             // 
             // txtLogin
             // 
@@ -96,7 +88,7 @@
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
@@ -138,11 +130,20 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Rol";
             // 
+            // cbEmpleado
+            // 
+            this.cbEmpleado.FormattingEnabled = true;
+            this.cbEmpleado.Location = new System.Drawing.Point(354, 51);
+            this.cbEmpleado.Name = "cbEmpleado";
+            this.cbEmpleado.Size = new System.Drawing.Size(183, 24);
+            this.cbEmpleado.TabIndex = 10;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbEmpleado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -152,7 +153,6 @@
             this.Controls.Add(this.cbRol);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.txtNombre);
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
@@ -162,8 +162,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.ComboBox cbRol;
@@ -173,5 +171,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbEmpleado;
     }
 }

@@ -7,6 +7,7 @@ namespace Pantallas_Sistema_facturacion1
     {
         public Usuario usuarioEditar { get; set; }
         public Usuario usuarioCreado { get; set; }
+        public int idRolSeleccionado { get; set; }
 
         public frmUsuarios()
         {
@@ -15,54 +16,57 @@ namespace Pantallas_Sistema_facturacion1
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            cbRol.Items.Clear();
-            cbRol.Items.Add("Administrador");
-            cbRol.Items.Add("Cajero");
+            AccesoDatos datos = new AccesoDatos();
 
-            if (usuarioEditar != null)
-            {
-                txtNombre.Text = usuarioEditar.Nombre;
-                txtLogin.Text = usuarioEditar.Login;
-                txtClave.Text = usuarioEditar.Clave;
-                cbRol.Text = usuarioEditar.Rol;
-            }
+            var dt = datos.EjecutarConsulta(
+                "SELECT IdEmpleado, StrNombre FROM TBLEMPLEADO");
+
+            cbEmpleado.DataSource = dt;
+            cbEmpleado.DisplayMember = "StrNombre";
+            cbEmpleado.ValueMember = "IdEmpleado";
+
+            var roles = datos.EjecutarConsulta(
+                "SELECT IdRolEmpleado, StrDescripcion FROM TBLROLES");
+
+            cbRol.DataSource = roles;
+            cbRol.DisplayMember = "StrDescripcion";
+            cbRol.ValueMember = "IdRolEmpleado";
         }
+
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (usuarioEditar != null)
+            int idEmpleado = Convert.ToInt32(cbEmpleado.SelectedValue);
+            idRolSeleccionado = Convert.ToInt32(cbRol.SelectedValue);
+
+            MessageBox.Show("Rol seleccionado: " + idRolSeleccionado);
+
+
+            if (usuarioEditar == null)
             {
-                // EDITAR
-                usuarioEditar.Nombre = txtNombre.Text;
-                usuarioEditar.Login = txtLogin.Text;
-                usuarioEditar.Clave = txtClave.Text;
-                usuarioEditar.Rol = cbRol.Text;
+                usuarioCreado = new Usuario()
+                {
+                    IdEmpleado = idEmpleado,
+                    NombreUsuario = txtLogin.Text,
+                    Password = txtClave.Text
+                };
             }
             else
             {
-                // NUEVO
-                usuarioCreado = new Usuario()
-                {
-                    Nombre = txtNombre.Text,
-                    Login = txtLogin.Text,
-                    Clave = txtClave.Text,
-                    Rol = cbRol.Text
-                };
+                usuarioEditar.IdEmpleado = idEmpleado;
+                usuarioEditar.NombreUsuario = txtLogin.Text;
+                usuarioEditar.Password = txtClave.Text;
             }
 
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-    
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

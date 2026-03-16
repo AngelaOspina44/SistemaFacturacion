@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
 
 namespace Pantallas_Sistema_facturacion1
 {
@@ -30,23 +29,39 @@ namespace Pantallas_Sistema_facturacion1
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            var usuario = DatosSistema.Usuarios
-                .FirstOrDefault(u =>
-                    u.Login == txtUsuario.Text &&
-                    u.Clave == txtClave.Text);
-
-            if (usuario == null)
+            if (txtUsuario.Text == "" || txtClave.Text == "")
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show("Ingrese usuario y contraseña");
                 return;
             }
 
-            // guardamos quien inició sesión
-            DatosSistema.UsuarioActual = usuario;
+            AccesoDatos datos = new AccesoDatos();
 
-            frmMenuNuevo menu = new frmMenuNuevo();
-            menu.Show();
-            this.Hide();
+            string sql = "SELECT S.IdSeguridad, S.StrUsuario, R.StrDescripcion " +
+                         "FROM TBLSEGURIDAD S " +
+                         "INNER JOIN TBLEMPLEADO E ON S.IdEmpleado = E.IdEmpleado " +
+                         "INNER JOIN TBLROLES R ON E.IdRolEmpleado = R.IdRolEmpleado " +
+                         "WHERE S.StrUsuario='" + txtUsuario.Text +
+                         "' AND S.StrClave='" + txtClave.Text + "'";
+
+            DataTable dt = datos.EjecutarConsulta(sql);
+
+            if (dt.Rows.Count > 0)
+            {
+                Sesion.IdUsuario = Convert.ToInt32(dt.Rows[0]["IdSeguridad"]);
+                Sesion.Usuario = dt.Rows[0]["StrUsuario"].ToString();
+                Sesion.Rol = dt.Rows[0]["StrDescripcion"].ToString();
+
+                MessageBox.Show("Bienvenido " + Sesion.Usuario);
+
+                frmMenuNuevo menu = new frmMenuNuevo();
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
         }
     }
 }

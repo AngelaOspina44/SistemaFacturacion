@@ -40,23 +40,25 @@
             // dgvUsuarios
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvUsuarios.ColumnHeadersHeight = 30;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.dgvUsuarios.Location = new System.Drawing.Point(0, 100);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(800, 450);
+            this.dgvUsuarios.Size = new System.Drawing.Size(800, 350);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(202, 41);
+            this.btnNuevo.Location = new System.Drawing.Point(212, 30);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(105, 34);
             this.btnNuevo.TabIndex = 1;
@@ -67,7 +69,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(356, 41);
+            this.btnEditar.Location = new System.Drawing.Point(350, 30);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(105, 34);
             this.btnEditar.TabIndex = 2;
@@ -78,7 +80,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(495, 41);
+            this.btnEliminar.Location = new System.Drawing.Point(484, 30);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(105, 34);
             this.btnEliminar.TabIndex = 3;
@@ -103,10 +105,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.pnlBotones);
             this.Name = "frmListaUsuarios";
             this.Text = "frmListaUsuarios";
+            this.Load += new System.EventHandler(this.frmListaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.pnlBotones.ResumeLayout(false);
             this.ResumeLayout(false);

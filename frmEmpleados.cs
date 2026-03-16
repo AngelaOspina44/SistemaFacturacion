@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Pantallas_Sistema_facturacion1
 {
@@ -15,38 +16,82 @@ namespace Pantallas_Sistema_facturacion1
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
+            // Asegura que el textbox solo permita números
+            txtDocumento.KeyPress += txtDocumento_KeyPress;
+
             if (empleadoEditar != null)
             {
                 txtNombre.Text = empleadoEditar.Nombre;
-                txtDocumento.Text = empleadoEditar.Documento;
+                txtDocumento.Text = empleadoEditar.Documento.ToString();
                 txtDireccion.Text = empleadoEditar.Direccion;
                 txtTelefono.Text = empleadoEditar.Telefono;
                 txtEmail.Text = empleadoEditar.Email;
             }
         }
 
+        // Solo permite números en documento
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            AccesoDatos datos = new AccesoDatos();
+
+            string nombre = txtNombre.Text.Trim();
+            string direccion = txtDireccion.Text.Trim();
+            string telefono = txtTelefono.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string docTexto = txtDocumento.Text.Trim();
+
+            if (nombre == "")
+            {
+                MessageBox.Show("Ingrese el nombre del empleado");
+                return;
+            }
+
+            if (docTexto == "")
+            {
+                MessageBox.Show("Ingrese el documento");
+                return;
+            }
+
+            long documento;
+
+            if (!long.TryParse(docTexto, out documento))
+            {
+                MessageBox.Show("El documento debe ser numérico");
+                return;
+            }
+
             if (empleadoEditar != null)
             {
-                // EDITAR
-                empleadoEditar.Nombre = txtNombre.Text;
-                empleadoEditar.Documento = txtDocumento.Text;
-                empleadoEditar.Direccion = txtDireccion.Text;
-                empleadoEditar.Telefono = txtTelefono.Text;
-                empleadoEditar.Email = txtEmail.Text;
+                string sql = "UPDATE TBLEMPLEADO SET " +
+                             "StrNombre='" + nombre + "'," +
+                             "NumDocumento=" + documento + "," +
+                             "StrDireccion='" + direccion + "'," +
+                             "StrTelefono='" + telefono + "'," +
+                             "StrEmail='" + email + "' " +
+                             "WHERE IdEmpleado=" + empleadoEditar.IdEmpleado;
+
+                datos.EjecutarComando(sql);
+                MessageBox.Show("Empleado actualizado correctamente");
             }
             else
             {
-                // NUEVO
-                empleadoCreado = new Empleado()
-                {
-                    Nombre = txtNombre.Text,
-                    Documento = txtDocumento.Text,
-                    Direccion = txtDireccion.Text,
-                    Telefono = txtTelefono.Text,
-                    Email = txtEmail.Text
-                };
+                string sql = "INSERT INTO TBLEMPLEADO(StrNombre,NumDocumento,StrDireccion,StrTelefono,StrEmail) VALUES('"
+                            + nombre + "',"
+                            + documento + ",'"
+                            + direccion + "','"
+                            + telefono + "','"
+                            + email + "')";
+
+                datos.EjecutarComando(sql);
+                MessageBox.Show("Empleado guardado correctamente");
             }
 
             this.DialogResult = DialogResult.OK;

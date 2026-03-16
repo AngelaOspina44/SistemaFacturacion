@@ -12,6 +12,8 @@ namespace Pantallas_Sistema_facturacion1
 {
     public partial class frmListaProductos : Form
     {
+        AccesoDatos datos = new AccesoDatos();
+        int idProductoSeleccionado = 0;
         public frmListaProductos()
         {
             InitializeComponent();
@@ -19,57 +21,71 @@ namespace Pantallas_Sistema_facturacion1
 
         private void frmListaProductos_Load(object sender, EventArgs e)
         {
-            dgvProductos.AutoGenerateColumns = true;
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = DatosSistema.Productos;
+            CargarProductos();
+        }
+
+        void CargarProductos()
+        {
+            dgvProductos.DataSource = datos.EjecutarConsulta(
+                "SELECT IdProducto,Nombre,Categoria,Precio,Stock FROM Productos");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.CurrentRow == null) return;
-
-            Producto seleccionado = dgvProductos.CurrentRow.DataBoundItem as Producto;
-            if (seleccionado == null) return;
+            if (idProductoSeleccionado == 0)
+            {
+                MessageBox.Show("Seleccione un producto");
+                return;
+            }
 
             frmProductos frm = new frmProductos();
-            frm.productoEditar = seleccionado;
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            frm.productoEditar = new Producto()
             {
-                dgvProductos.Refresh();
-            }
-        }
+                IdProducto = idProductoSeleccionado,
+                Nombre = dgvProductos.CurrentRow.Cells["Nombre"].Value?.ToString(),
+                Categoria = dgvProductos.CurrentRow.Cells["Categoria"].Value?.ToString(),
+                Precio = dgvProductos.CurrentRow.Cells["Precio"].Value == DBNull.Value ? 0 : Convert.ToInt32(dgvProductos.CurrentRow.Cells["Precio"].Value),
+                Stock = dgvProductos.CurrentRow.Cells["Stock"].Value == DBNull.Value ? 0 : Convert.ToInt32(dgvProductos.CurrentRow.Cells["Stock"].Value)
+            };
 
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvProductos.DataSource = DatosSistema.Productos;
+            frm.ShowDialog();
+            CargarProductos();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmProductos frm = new frmProductos();
-
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                DatosSistema.Productos.Add(frm.productoCreado);
-                dgvProductos.DataSource = null;
-                dgvProductos.DataSource = DatosSistema.Productos;
-            }
+            frm.ShowDialog();
+            CargarProductos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.CurrentRow == null) return;
-
-            Producto seleccionado = dgvProductos.CurrentRow.DataBoundItem as Producto;
-            if (seleccionado == null) return;
-
-            frmProductos frm = new frmProductos();
-            frm.productoEditar = seleccionado;
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (idProductoSeleccionado == 0)
             {
-                dgvProductos.Refresh();
+                MessageBox.Show("Seleccione un producto");
+                return;
+            }
+
+            datos.EjecutarComando("DELETE FROM TBLPRODUCTO WHERE IdProducto=" + idProductoSeleccionado);
+
+            MessageBox.Show("Producto eliminado");
+            CargarProductos();
+        }
+
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProductos.CurrentRow != null &&
+                dgvProductos.CurrentRow.Cells[0].Value != null &&
+                dgvProductos.CurrentRow.Cells[0].Value != DBNull.Value)
+            {
+                idProductoSeleccionado =
+                    Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
+            }
+            else
+            {
+                idProductoSeleccionado = 0;
             }
         }
     }

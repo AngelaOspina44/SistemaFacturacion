@@ -28,10 +28,8 @@ namespace Pantallas_Sistema_facturacion1
             // ADMIN POR DEFECTO
             DatosSistema.Usuarios.Add(new Usuario
             {
-                Nombre = "Administrador",
-                Login = "admin",
-                Clave = "1234",
-                Rol = "Administrador"
+                NombreUsuario = "admin",
+                Password = "1234"
             });
 
             Application.Run(new frmLogin());    

@@ -141,6 +141,8 @@
             this.dgvClientes.RowTemplate.Height = 24;
             this.dgvClientes.Size = new System.Drawing.Size(793, 308);
             this.dgvClientes.TabIndex = 3;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
             // 
             // frmListaClientes
             // 

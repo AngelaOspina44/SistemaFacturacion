@@ -113,7 +113,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(396, 128);
+            this.txtDireccion.Location = new System.Drawing.Point(396, 181);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(227, 31);
             this.txtDireccion.TabIndex = 7;
@@ -121,7 +121,7 @@
             // txtDocumento
             // 
             this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(396, 187);
+            this.txtDocumento.Location = new System.Drawing.Point(396, 128);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(227, 31);
             this.txtDocumento.TabIndex = 8;

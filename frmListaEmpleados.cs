@@ -10,15 +10,23 @@ namespace Pantallas_Sistema_facturacion1
             InitializeComponent();
         }
 
+        void CargarEmpleados()
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            dgvEmpleados.DataSource = datos.EjecutarConsulta(
+                "SELECT IdEmpleado, StrNombre AS Nombre, NumDocumento AS Documento, StrDireccion AS Direccion, StrTelefono AS Telefono, StrEmail AS Email FROM TBLEMPLEADO");
+        }
+
         private void frmListaEmpleados_Load(object sender, EventArgs e)
         {
-            CargarGrid();
+            CargarEmpleados();
         }
 
         private void CargarGrid()
         {
-            dgvEmpleados.DataSource = null;
-            dgvEmpleados.DataSource = DatosSistema.Empleados;
+            AccesoDatos datos = new AccesoDatos();
+            dgvEmpleados.DataSource = datos.EjecutarConsulta("SELECT * FROM Empleados");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -34,16 +42,27 @@ namespace Pantallas_Sistema_facturacion1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvEmpleados.CurrentRow == null) return;
-
-            Empleado emp = (Empleado)dgvEmpleados.CurrentRow.DataBoundItem;
+            if (dgvEmpleados.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un empleado");
+                return;
+            }
 
             frmEmpleados frm = new frmEmpleados();
-            frm.empleadoEditar = emp;
+
+            frm.empleadoEditar = new Empleado()
+            {
+                IdEmpleado = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells["IdEmpleado"].Value),
+                Nombre = dgvEmpleados.CurrentRow.Cells["Nombre"].Value.ToString(),
+                Documento = Convert.ToInt64(dgvEmpleados.CurrentRow.Cells["Documento"].Value),
+                Direccion = dgvEmpleados.CurrentRow.Cells["Direccion"].Value.ToString(),
+                Telefono = dgvEmpleados.CurrentRow.Cells["Telefono"].Value.ToString(),
+                Email = dgvEmpleados.CurrentRow.Cells["Email"].Value.ToString()
+            };
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                CargarGrid();
+                CargarEmpleados();
             }
         }
 
@@ -51,12 +70,20 @@ namespace Pantallas_Sistema_facturacion1
         {
             if (dgvEmpleados.CurrentRow == null) return;
 
-            Empleado emp = (Empleado)dgvEmpleados.CurrentRow.DataBoundItem;
-
             if (MessageBox.Show("¿Eliminar empleado?", "Confirmar",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DatosSistema.Empleados.Remove(emp);
+                int idEmpleado = Convert.ToInt32(
+                    dgvEmpleados.CurrentRow.Cells["IdEmpleado"].Value);
+
+                AccesoDatos datos = new AccesoDatos();
+
+                // Primero eliminar en seguridad
+                datos.EjecutarComando("DELETE FROM TBLSEGURIDAD WHERE IdEmpleado=" + idEmpleado);
+
+                // Luego eliminar el empleado
+                datos.EjecutarComando("DELETE FROM TBLEMPLEADO WHERE IdEmpleado=" + idEmpleado);
+
                 CargarGrid();
             }
         }
