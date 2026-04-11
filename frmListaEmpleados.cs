@@ -10,23 +10,18 @@ namespace Pantallas_Sistema_facturacion1
             InitializeComponent();
         }
 
-        void CargarEmpleados()
-        {
-            AccesoDatos datos = new AccesoDatos();
-
-            dgvEmpleados.DataSource = datos.EjecutarConsulta(
-                "SELECT IdEmpleado, StrNombre AS Nombre, NumDocumento AS Documento, StrDireccion AS Direccion, StrTelefono AS Telefono, StrEmail AS Email FROM TBLEMPLEADO");
-        }
+        
 
         private void frmListaEmpleados_Load(object sender, EventArgs e)
         {
-            CargarEmpleados();
+            CargarGrid();
         }
 
         private void CargarGrid()
         {
             AccesoDatos datos = new AccesoDatos();
-            dgvEmpleados.DataSource = datos.EjecutarConsulta("SELECT * FROM Empleados");
+            dgvEmpleados.DataSource = datos.EjecutarConsulta(
+                "SELECT IdEmpleado, StrNombre AS Nombre, NumDocumento AS Documento, StrDireccion AS Direccion, StrTelefono AS Telefono, StrEmail AS Email FROM TBLEMPLEADO");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -62,7 +57,7 @@ namespace Pantallas_Sistema_facturacion1
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                CargarEmpleados();
+                CargarGrid();
             }
         }
 
@@ -78,11 +73,23 @@ namespace Pantallas_Sistema_facturacion1
 
                 AccesoDatos datos = new AccesoDatos();
 
-                // Primero eliminar en seguridad
+                // VALIDAR SI TIENE FACTURAS
+                int tieneFacturas = Convert.ToInt32(
+                    datos.EjecutarScalar("SELECT COUNT(*) FROM TBLFACTURA WHERE IdEmpleado=" + idEmpleado));
+
+                if (tieneFacturas > 0)
+                {
+                    MessageBox.Show("No se puede eliminar el empleado porque tiene facturas registradas");
+                    return;
+                }
+
+                // eliminar en seguridad
                 datos.EjecutarComando("DELETE FROM TBLSEGURIDAD WHERE IdEmpleado=" + idEmpleado);
 
-                // Luego eliminar el empleado
+                // eliminar empleado
                 datos.EjecutarComando("DELETE FROM TBLEMPLEADO WHERE IdEmpleado=" + idEmpleado);
+
+                MessageBox.Show("Empleado eliminado correctamente");
 
                 CargarGrid();
             }

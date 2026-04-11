@@ -32,11 +32,13 @@ namespace Pantallas_Sistema_facturacion1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (idProductoSeleccionado == 0)
+            if (dgvProductos.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione un producto");
                 return;
             }
+
+            int idProductoSeleccionado = Convert.ToInt32(dgvProductos.CurrentRow.Cells["IdProducto"].Value);
 
             frmProductos frm = new frmProductos();
 
@@ -62,16 +64,29 @@ namespace Pantallas_Sistema_facturacion1
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (idProductoSeleccionado == 0)
-            {
-                MessageBox.Show("Seleccione un producto");
-                return;
-            }
+                if (dgvProductos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un producto");
+                    return;
+                }
 
-            datos.EjecutarComando("DELETE FROM TBLPRODUCTO WHERE IdProducto=" + idProductoSeleccionado);
+                int idProducto = Convert.ToInt32(dgvProductos.CurrentRow.Cells["IdProducto"].Value);
 
-            MessageBox.Show("Producto eliminado");
-            CargarProductos();
+                var confirm = MessageBox.Show(
+                    "¿Seguro que desea eliminar este producto?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirm == DialogResult.Yes)
+                {
+                    datos.EjecutarComando("DELETE FROM TBLPRODUCTO WHERE IdProducto=" + idProducto);
+
+                    MessageBox.Show("Producto eliminado");
+                    CargarProductos();
+             }
+            
         }
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
@@ -87,6 +102,16 @@ namespace Pantallas_Sistema_facturacion1
             {
                 idProductoSeleccionado = 0;
             }
+        }
+
+        private void pnlTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -53,11 +53,11 @@
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(12, 41);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 152);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(323, 74);
+            this.lblTitulo.Size = new System.Drawing.Size(343, 74);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Sistema de Facturación";
+            this.lblTitulo.Text = "Sistema de facturación➕➖✖️➗";
             this.lblTitulo.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblUsuario

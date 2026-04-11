@@ -10,7 +10,8 @@ namespace Pantallas_Sistema_facturacion1
         public Empleado Empleado { get; set; }
 
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
-        public string Estado { get; set; }
+        public int IdEstado { get; set; }
+        public string EstadoDescripcion { get; set; }
 
         public decimal Descuento { get; set; }
         public decimal IVA { get; set; }

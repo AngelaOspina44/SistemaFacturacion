@@ -47,9 +47,20 @@ namespace Pantallas_Sistema_facturacion1
                 return;
             }
 
-            datos.EjecutarComando("DELETE FROM Clientes WHERE IdCliente=" + idClienteSeleccionado);
+            // VALIDAR SI TIENE FACTURAS
+            int tieneFacturas = Convert.ToInt32(
+                datos.EjecutarScalar("SELECT COUNT(*) FROM TBLFACTURA WHERE IdCliente=" + idClienteSeleccionado));
 
-            MessageBox.Show("Cliente eliminado");
+            if (tieneFacturas > 0)
+            {
+                MessageBox.Show("No se puede eliminar el cliente porque tiene facturas registradas");
+                return;
+            }
+
+            // eliminar cliente
+            datos.EjecutarComando("DELETE FROM TBLCLIENTES WHERE IdCliente=" + idClienteSeleccionado);
+
+            MessageBox.Show("Cliente eliminado correctamente");
             CargarClientes();
         }
 
@@ -69,8 +80,8 @@ namespace Pantallas_Sistema_facturacion1
                 IdCliente = idClienteSeleccionado,
                 Nombre = dgvClientes.CurrentRow.Cells[1].Value.ToString(),
                 Documento = dgvClientes.CurrentRow.Cells[2].Value.ToString(),
-                Telefono = dgvClientes.CurrentRow.Cells[3].Value.ToString(),
-                Direccion = dgvClientes.CurrentRow.Cells[4].Value.ToString(),
+                Direccion = dgvClientes.CurrentRow.Cells[3].Value.ToString(),
+                Telefono = dgvClientes.CurrentRow.Cells[4].Value.ToString(),  
                 Email = dgvClientes.CurrentRow.Cells[5].Value.ToString()
             };
 
@@ -91,6 +102,16 @@ namespace Pantallas_Sistema_facturacion1
             {
                 idClienteSeleccionado = 0;
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

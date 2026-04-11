@@ -83,12 +83,8 @@ namespace Pantallas_Sistema_facturacion1
             }
             else
             {
-                string sql = "INSERT INTO TBLEMPLEADO(StrNombre,NumDocumento,StrDireccion,StrTelefono,StrEmail) VALUES('"
-                            + nombre + "',"
-                            + documento + ",'"
-                            + direccion + "','"
-                            + telefono + "','"
-                            + email + "')";
+                string sql = "INSERT INTO TBLEMPLEADO (StrNombre, NumDocumento, StrDireccion, StrTelefono, StrEmail) " +
+                "VALUES ('" + nombre + "', " + documento + ", '" + direccion + "', '" + telefono + "', '" + email + "')";
 
                 datos.EjecutarComando(sql);
                 MessageBox.Show("Empleado guardado correctamente");

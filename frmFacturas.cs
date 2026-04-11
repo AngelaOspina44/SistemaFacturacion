@@ -1,36 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Pantallas_Sistema_facturacion1
 {
     public partial class frmFacturas : Form
     {
-        public Factura facturaEditar { get; set; }
+        public int IdFacturaEditar { get; set; } = 0;
+
+        private bool facturaYaGuardada = false;
+        private Factura facturaActual = new Factura();
+
         public frmFacturas()
         {
             InitializeComponent();
-        }
-        private void CargarProductos()
-        {
-            cbProducto.DataSource = null;
-            cbProducto.DataSource = DatosSistema.Productos;
-            cbProducto.DisplayMember = "Nombre";
-        }
-
-        private bool facturaYaGuardada = false;
-
-        private Factura facturaActual = new Factura();
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -47,18 +33,22 @@ namespace Pantallas_Sistema_facturacion1
                 return;
             }
 
-            Producto prod = (Producto)cbProducto.SelectedItem;
+            DataRowView row = (DataRowView)cbProducto.SelectedItem;
+
+            string nombre = row["Nombre"].ToString();
+            decimal precio = Convert.ToDecimal(row["Precio"]);
 
             DetalleFactura det = new DetalleFactura()
             {
-                Producto = prod,
+                Producto = new Producto { Nombre = nombre, Precio = precio },
                 Cantidad = (int)nudCantidad.Value,
-                Precio = prod.Precio
+                Precio = precio
             };
 
             facturaActual.Detalles.Add(det);
 
-            dgvDetalle.Refresh();
+            dgvDetalle.DataSource = null;
+            dgvDetalle.DataSource = facturaActual.Detalles;
 
             CalcularTotales();
         }
@@ -66,41 +56,67 @@ namespace Pantallas_Sistema_facturacion1
         private void CalcularTotales()
         {
             decimal subtotal = facturaActual.Detalles.Sum(d => d.Subtotal);
+
+            decimal descuento = 0;
+            decimal.TryParse(txtDescuento.Text, out descuento);
+
             decimal iva = subtotal * 0.19m;
+            decimal total = subtotal + iva - descuento;
 
             txtIVA.Text = iva.ToString("0.00");
-            lblTotalFactura.Text = (subtotal + iva - facturaActual.Descuento).ToString("0.00");
+            lblTotalFactura.Text = total.ToString("0.00");
         }
 
         private void frmFacturas_Load(object sender, EventArgs e)
         {
-            CargarProductos();
-
             facturaYaGuardada = false;
 
-            // Clientes
-            cbCliente.DataSource = DatosSistema.Clientes;
+            AccesoDatos datos = new AccesoDatos();
 
-            // Empleados
-            cbEmpleado.DataSource = DatosSistema.Empleados;
+            cbCliente.DataSource = datos.EjecutarConsulta("SELECT IdCliente, Nombre FROM Clientes");
+            cbCliente.DisplayMember = "Nombre";
+            cbCliente.ValueMember = "IdCliente";
 
-            // Productos
-            cbProducto.DataSource = DatosSistema.Productos;
+            cbEmpleado.DataSource = datos.EjecutarConsulta("SELECT IdEmpleado, Nombre FROM Empleados");
+            cbEmpleado.DisplayMember = "Nombre";
+            cbEmpleado.ValueMember = "IdEmpleado";
 
-            // Estados
-            cbEstado.Items.Add("Pendiente");
-            cbEstado.Items.Add("Pagada");
-            cbEstado.SelectedIndex = 0;
+            cbProducto.DataSource = datos.EjecutarConsulta("SELECT IdProducto, Nombre, Precio FROM Productos");
+            cbProducto.DisplayMember = "Nombre";
+            cbProducto.ValueMember = "IdProducto";
 
-            // Tabla detalle
+            cbEstado.DataSource = datos.EjecutarConsulta("SELECT IdEstadoFactura, StrDescripcion FROM TBLESTADO_FACTURA");
+            cbEstado.DisplayMember = "StrDescripcion";
+            cbEstado.ValueMember = "IdEstadoFactura";
 
             dgvDetalle.AutoGenerateColumns = true;
             dgvDetalle.DataSource = facturaActual.Detalles;
+
+            if (IdFacturaEditar > 0)
+            {
+                CargarFacturaParaEditar();
+            }
         }
 
-        private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        private void CargarFacturaParaEditar()
         {
+            AccesoDatos datos = new AccesoDatos();
 
+            DataTable dt = datos.EjecutarConsulta($@"
+                SELECT * FROM TBLFACTURA WHERE IdFactura = {IdFacturaEditar}");
+
+            if (dt.Rows.Count == 0) return;
+
+            DataRow row = dt.Rows[0];
+
+            dtpFecha.Value = Convert.ToDateTime(row["DtmFecha"]);
+            cbCliente.SelectedValue = Convert.ToInt32(row["IdCliente"]);
+            cbEmpleado.SelectedValue = Convert.ToInt32(row["IdEmpleado"]);
+            cbEstado.SelectedValue = Convert.ToInt32(row["IdEstado"]);
+
+            txtDescuento.Text = row["NumDescuento"].ToString();
+            txtIVA.Text = row["NumImpuesto"].ToString();
+            lblTotalFactura.Text = row["NumValorTotal"].ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -129,18 +145,56 @@ namespace Pantallas_Sistema_facturacion1
                 return;
             }
 
-            facturaActual.Cliente = (Cliente)cbCliente.SelectedItem;
-            facturaActual.Empleado = (Empleado)cbEmpleado.SelectedItem;
-            facturaActual.FechaRegistro = dtpFecha.Value;
-            facturaActual.Estado = cbEstado.Text;
+            int idCliente = (int)cbCliente.SelectedValue;
+            int idEmpleado = (int)cbEmpleado.SelectedValue;
+            int idEstado = (int)cbEstado.SelectedValue;
 
             decimal descuento = 0;
             decimal.TryParse(txtDescuento.Text, out descuento);
-            facturaActual.Descuento = descuento;
 
-            facturaActual.Numero = DatosSistema.Facturas.Count + 1;
+            decimal subtotal = facturaActual.Detalles.Sum(d => d.Subtotal);
+            decimal iva = subtotal * 0.19m;
+            decimal total = subtotal + iva - descuento;
 
-            DatosSistema.Facturas.Add(facturaActual);
+            AccesoDatos datos = new AccesoDatos();
+
+            string consulta;
+
+            if (IdFacturaEditar == 0)
+            {
+                // INSERT
+                consulta = $@"
+                INSERT INTO TBLFACTURA
+                (DtmFecha, IdCliente, IdEmpleado, NumDescuento, NumImpuesto, NumValorTotal, IdEstado, DtmFechaModifica, StrUsuarioModifica)
+                VALUES
+                ('{dtpFecha.Value:yyyy-MM-dd}',
+                {idCliente},
+                {idEmpleado},
+                {descuento.ToString(CultureInfo.InvariantCulture)},
+                {iva.ToString(CultureInfo.InvariantCulture)},
+                {total.ToString(CultureInfo.InvariantCulture)},
+                {idEstado},
+                GETDATE(),
+                'sistema')";
+            }
+            else
+            {
+                // UPDATE
+                consulta = $@"
+                UPDATE TBLFACTURA SET
+                DtmFecha = '{dtpFecha.Value:yyyy-MM-dd}',
+                IdCliente = {idCliente},
+                IdEmpleado = {idEmpleado},
+                NumDescuento = {descuento.ToString(CultureInfo.InvariantCulture)},
+                NumImpuesto = {iva.ToString(CultureInfo.InvariantCulture)},
+                NumValorTotal = {total.ToString(CultureInfo.InvariantCulture)},
+                IdEstado = {idEstado},
+                DtmFechaModifica = GETDATE(),
+                StrUsuarioModifica = 'sistema'
+                WHERE IdFactura = {IdFacturaEditar}";
+            }
+
+            datos.EjecutarComando(consulta);
 
             facturaYaGuardada = true;
 
@@ -153,6 +207,14 @@ namespace Pantallas_Sistema_facturacion1
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

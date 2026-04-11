@@ -15,6 +15,15 @@ class AccesoDatos
         return dt;
     }
 
+    public object EjecutarScalar(string consulta)
+    {
+        SqlCommand cmd = new SqlCommand(consulta, conexion);
+        conexion.Open();
+        object resultado = cmd.ExecuteScalar();
+        conexion.Close();
+        return resultado;
+    }
+
     public void EjecutarComando(string consulta)
     {
         conexion.Open();

@@ -15,5 +15,9 @@ namespace Pantallas_Sistema_facturacion1
         public String Categoria { get; set; }
         public decimal Precio { get; set; }
         public int Stock { get; set; }
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }
